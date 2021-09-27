@@ -1,19 +1,19 @@
-pub fn expanded_form(n: u64) -> String{
-    let mut res : String = "".to_string();
+pub fn expanded_form(n: u64) -> String {
+    let mut res: String = "".to_string();
     let mut num = n.clone();
     let mut modu = 10;
     let mut remain_exists = false;
-    
+
     while num > modu {
         let remainder = num % modu;
-        if remainder != 0{
+        if remainder != 0 {
             remain_exists = true;
             if res != "" {
                 res = format!("{} + {}", remainder, res);
-            }else if res == "" {
+            } else if res == "" {
                 res = remainder.to_string();
-            } 
-        } 
+            }
+        }
         num -= remainder;
         modu *= 10;
     }
@@ -23,7 +23,6 @@ pub fn expanded_form(n: u64) -> String{
     }
     num.to_string()
 }
-
 
 #[cfg(test)]
 mod tests {

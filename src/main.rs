@@ -1,7 +1,6 @@
-use codewars::revrot::revrot;
+use codewars::encrypt_this::encrypt_this;
 
 fn main() {
-    revrot("733049910872815764", 5);
-    revrot("2424", 2);
-    println!("Hello, world!");
+    let res = encrypt_this("text");
+    println!("{}", res);
 }
