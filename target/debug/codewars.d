@@ -1,1 +1,0 @@
-/home/akira/Documents/Rust/codewars/target/debug/codewars: /home/akira/Documents/Rust/codewars/src/lib.rs /home/akira/Documents/Rust/codewars/src/main.rs /home/akira/Documents/Rust/codewars/src/revrot.rs
