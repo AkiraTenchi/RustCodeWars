@@ -6,3 +6,4 @@ pub mod race;
 pub mod revrot;
 pub mod rot13;
 pub mod street_fighter_selection;
+pub mod find_short;
