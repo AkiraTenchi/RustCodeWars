@@ -16,7 +16,7 @@ pub fn encrypt_this(text: &str) -> String {
                 format!(
                     "{}{}{}",
                     first.get(first.len() - 1).unwrap(),
-                    &word[2 .. (first.len() - 1)],
+                    &word[2..(first.len() - 1)],
                     first.get(1).unwrap()
                 )
             );
