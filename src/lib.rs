@@ -9,3 +9,4 @@ pub mod revrot;
 pub mod rot13;
 pub mod street_fighter_2_selection;
 pub mod street_fighter_selection;
+pub mod url_shortener;
