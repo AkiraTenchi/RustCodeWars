@@ -1,5 +1,3 @@
-
-
 pub fn buddy(start: i64, limit: i64) -> Option<(i64, i64)> {
     for i in start..limit {
         let div_sum = get_divisors_sum(i);
@@ -17,7 +15,7 @@ pub fn buddy(start: i64, limit: i64) -> Option<(i64, i64)> {
 //     (1..n).into_iter().filter(|&x| n % x == 0).sum()
 // }
 
-fn get_divisors_sum(n:i64) -> i64 {
+fn get_divisors_sum(n: i64) -> i64 {
     let mut sum = 0;
     let target = (n as f32).sqrt().round() as i64;
 
@@ -32,7 +30,6 @@ fn get_divisors_sum(n:i64) -> i64 {
 
     return sum;
 }
-
 
 #[cfg(test)]
 mod tests {
