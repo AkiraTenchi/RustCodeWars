@@ -7,7 +7,7 @@ pub fn street_fighter_selection(
     moves: &[Direction],
 ) -> Vec<String> {
     let mut res = Vec::<String>::new();
-    let mut pos =  position.clone();
+    let mut pos = position.clone();
     // res.push(fighters[position[0] as usize][position[1] as usize].to_string());
     for mov in moves {
         match mov {
@@ -15,42 +15,42 @@ pub fn street_fighter_selection(
                 let (name, posi) = vertical(fighters, -1, &pos);
                 res.push(name);
                 pos = posi;
-            },
+            }
             &Direction::Down => {
                 let (name, posi) = vertical(fighters, 1, &pos);
                 res.push(name);
                 pos = posi;
-            },
+            }
             &Direction::Left => {
-                let (name, posi) = horizontal(fighters, -1, &pos); 
+                let (name, posi) = horizontal(fighters, -1, &pos);
                 res.push(name);
                 pos = posi;
-            },
+            }
             &Direction::Right => {
-                let(name, posi) = horizontal(fighters, 1, &pos); 
+                let (name, posi) = horizontal(fighters, 1, &pos);
                 res.push(name);
                 pos = posi;
-            },
+            }
         }
     }
     res
 }
 
-fn vertical(fighters: &[[&str; 6]; 2], dir: i64, position: &[i64; 2]) -> (String, [i64; 2]){
+fn vertical(fighters: &[[&str; 6]; 2], dir: i64, position: &[i64; 2]) -> (String, [i64; 2]) {
     let mut pos = position.clone();
-    if !(pos[0] + dir > 1) && !(pos[0] + dir < 0){
-       pos = [pos[0] + dir, pos[1]]; 
+    if !(pos[0] + dir > 1) && !(pos[0] + dir < 0) {
+        pos = [pos[0] + dir, pos[1]];
     }
     (fighters[pos[0] as usize][pos[1] as usize].to_string(), pos)
 }
 
-fn horizontal(fighters: &[[&str; 6]; 2], dir: i64, position: &[i64; 2]) -> (String, [i64; 2]){
+fn horizontal(fighters: &[[&str; 6]; 2], dir: i64, position: &[i64; 2]) -> (String, [i64; 2]) {
     let mut pos = position.clone();
     match pos[1] + dir {
         6 => pos = [pos[0], 0],
         -1 => pos = [pos[0], 5],
         0..=5 => pos = [pos[0], pos[1] + dir],
-        _ => panic!(), 
+        _ => panic!(),
     }
     (fighters[pos[0] as usize][pos[1] as usize].to_string(), pos)
 }
